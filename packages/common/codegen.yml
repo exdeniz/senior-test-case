@@ -1,0 +1,25 @@
+schema: http://localhost:4000/graphql
+# https://tokenstage.dev/graphql
+overwrite: true
+generates:
+  # ./schema.graphql:
+  #   plugins:
+  #     - schema-ast
+  #   config:
+  #     includeDirectives: true
+  ./src/generated-types.ts:
+    schema: './src/localSchema.graphql'
+    documents: ['./src/**/*.graphql']
+    config:
+      skipDocumentsValidation: true
+      skipTypename: false
+      withHooks: true
+      withHOC: false
+      withComponent: false
+      apolloReactHooksImportFrom: '@apollo/client'
+      apolloReactCommonImportFrom: '@apollo/client'
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+      # - fragment-matcher

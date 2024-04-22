@@ -1,0 +1,11 @@
+extend type MarketOrder {
+  marketId: String
+}
+
+extend type MarketTicker {
+  sortIndex: Int
+}
+
+extend type Market {
+  isInFavourite: Boolean
+}

@@ -1,0 +1,16 @@
+fragment PageInfoFields on PageInfo {
+  endCursor
+  hasNextPage
+  hasPreviousPage
+  startCursor
+}
+
+fragment PaginationFields on Pagination {
+  currentPage
+  firstPage
+  lastPage
+  limitValue
+  nextPage
+  prevPage
+  totalPages
+}

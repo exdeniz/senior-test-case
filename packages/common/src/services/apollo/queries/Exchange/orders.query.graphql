@@ -1,0 +1,45 @@
+query GetUserOrders(
+  $market: String
+  $state: String
+  $withTrades: Boolean
+  $currency: String
+  $type: String
+  $direction: String
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $page: Int
+  $perPage: Int
+) {
+  orders(
+    market: $market
+    state: $state
+    withTrades: $withTrades
+    type: $type
+    direction: $direction
+    currency: $currency
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    page: $page
+    perPage: $perPage
+  ) {
+    ... on OrderConnection {
+      edges {
+        cursor
+        node {
+          ...OrderFields
+        }
+      }
+      pageInfo {
+        ...PageInfoFields
+      }
+      pagination {
+        ...PaginationFields
+      }
+      totalCount
+    }
+  }
+}

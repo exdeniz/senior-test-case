@@ -1,0 +1,21 @@
+fragment OrderFields on Order {
+  ask
+  avgPrice
+  bid
+  createdAt
+  direction
+  executedVolume
+  factor
+  fixPrice
+  fundsFee
+  fundsReceived
+  id
+  marketId
+  originVolume
+  price
+  received
+  state
+  tradesCount
+  type
+  volume
+}
